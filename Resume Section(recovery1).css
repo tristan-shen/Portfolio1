@@ -1,0 +1,65 @@
+#Resume {
+    position: relative;
+    display: flex;
+    flex-direction: column;  /* This stacks the title and content vertically */
+    justify-content: center;  /* This aligns the title to the top */
+    align-items: center;  /* This centers the content horizontally */
+    color: #FFF; /* Assuming light text over a likely dark video */
+    height: 100vh; 
+    overflow: hidden; /* Ensure the video doesn't exceed the section boundaries */
+    min-height: 500px; /* Adjust based on your content or desired section height */
+    width: 100%; /* Ensure full width */
+}
+
+#Resume > h2 {
+    font-size: 24px;
+    text-align: center;
+    top:0%;
+    margin-top: 0px;  
+    margin-bottom: 20px;  
+    color: #333; 
+    font-weight: bold;  
+    width: 100%;  /* Ensures the title spans the full width */
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire section without losing aspect ratio */
+    z-index: 1; /* Ensure it stays behind other content */
+}
+
+/* Ensure content on top of the video is visible */
+#Resume > *:not(.background-video) {
+    position: relative;
+    z-index: 2;
+}
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Control the darkness here */
+    z-index: 2; /* Positioned above the video */
+}
+
+#Resume > *:not(.background-video, .video-overlay) {
+    position: relative;
+    z-index: 1;
+}
+#Resume h2, #Resume p, #Resume .resume-content {
+    position: relative;
+    z-index: 3; /* Ensures text is above overlay */
+}
+.resume-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;  /* This is important to ensure it spans the full width */
+    flex-grow: 1;  /* This makes it take up the remaining space after the title */
+}
+

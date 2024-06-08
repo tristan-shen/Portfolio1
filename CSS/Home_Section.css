@@ -1,0 +1,122 @@
+/* -------------------------------------------- HOME SECTION ------------------------------------------------- */
+
+#Home {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;  /* This centers horizontally */
+  /*justify-content: space-around;*/
+  align-items: center;
+  position: relative;
+  height: 80vh;
+  /*justify-content: space-between; /* This will adjust space between flex items */
+  /*background-color: #ffffff;*/
+}
+
+.name-animation {
+  font-size: 2em;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: fadeIn 2s ease-in-out;
+  color: #000000;
+}
+
+.welcome-notes {
+  font-size: 1.2em;
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  transform: translateX(-50%);
+  animation: fadeIn 2s ease-in-out forwards;
+  color: #000;  /* Adjust color to fit your design */
+  text-align: center;
+  animation-delay: 0.5s;
+  opacity: 0;
+  margin-bottom: 20px;  /* Space between the additional text and the info boxes */
+}
+
+.info-box-container {
+  opacity: 0;
+  transform: translateX(100%);
+  animation: slideInRight 1s forwards, fadeIn 1s forwards;
+  animation-delay: calc(1.5s + (0.2s * var(--box-number)));
+  margin-top: 180px;  /* Adjust this value to your preference */
+}
+
+.info-box {
+  width: 400px;
+  height: 500px;
+  background: #585555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(1);
+  opacity: 1;
+  transition: transform 0.3s ease-in-out;
+  margin: 0 20px; /* Space between boxes. Adjust as needed. */
+}
+
+.info-box:hover {
+  background-color: #ff5555;
+  transform: scale(1.1);
+}
+
+.info-box img, .info-box video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  
+  /* This ensures the image or 
+  video covers the entire content
+   area without being stretched or squished */
+}
+
+/* Triple Down Arrow Styles - Start */
+.scroll-downs {
+  position: absolute;
+  bottom: 20px;
+  left: 90%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.mousey {
+  display: block;
+  margin: 0 auto;
+  width: 25px;
+  height: 45px;
+  border: 2px solid black;
+  border-radius: 14px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.scroller {
+  width: 3px;
+  height: 10px;
+  border-radius: 25%;
+  background-color: rgb(0, 0, 0);
+  animation: scroll 1s infinite;
+  position: absolute;
+  top: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scroll 2s infinite; /* Change the duration as needed */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 3s ease-out;
+}
+
+@keyframes scroll {
+  0% { opacity: 0; }
+  30% { opacity: 1; }
+  60% { opacity: 1; }
+  100% { opacity: 0; top: 25px; }
+}
+/* Triple Down Arrow Styles - End */

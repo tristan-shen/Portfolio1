@@ -1,0 +1,242 @@
+
+/* General Styling for Body and Headings */
+body {
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #ffffff;
+    background-color: #2e2d2d;
+}
+
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-size: 2em;
+}
+/* Styling for Carousel Buttons: Designs the previous and next buttons */
+.carousel-btn, #prevBtn, #nextBtn {
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 0px solid #000000;
+    color: #fff;
+    padding: 1000px 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 100;  /* Ensure buttons are always on top */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.carousel-btn:hover, #prevBtn:hover, #nextBtn:hover {
+    background-color: rgba(255, 255, 255, 0.397);
+}
+#prevBtn {
+    left: 0px;
+}
+#nextBtn {
+    right: 0px;
+}
+
+/* Carousel Container Settings: Sets the layout and position of the carousel */
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Carousel Viewport: This is essentially the window through which the carousel items are visible */
+.carousel-viewport {
+    flex-grow: 1;
+    overflow: hidden;
+}
+/* Portfolio Items Container: Arrangement of individual portfolio items inside the carousel */
+.portfolio-items {
+    display: flex;
+    transition: transform 0.5s;
+}
+/* Individual Portfolio Item: Styling and appearance for each portfolio piece in the carousel */
+.portfolio-item {
+    flex: 0 0 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.portfolio-item.active {
+    opacity: 1;
+}
+
+.portfolio-item:not(.active) {
+    opacity: 0.6;
+    transform: scale(0.9);
+}
+/* PDF Link Settings: Designs the clickable links inside each portfolio item */
+.pdf-link {
+    display: block;
+    margin-top: 10px;
+    text-align: right;
+    background-color: #000000;
+    padding: 5px 10px;
+    border-radius: 3px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.pdf-link:hover {
+    background-color: #555;
+}
+/* Navbar Styling: Sets the appearance and position of the fixed navigation bar */
+.navbar {
+    display: flex;        /* Turn navbar into a flex container */
+    justify-content: center; /* Center children horizontally */
+    align-items: center;     /* Center children vertically */
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2000;
+}
+
+.navbar a {
+    display: inline-block;
+    float: none;
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #ad0000;
+}
+/* Global Styling for Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Content Section: The setup to ensure the content section isn't hidden under the fixed navbar */
+.content-section:before {
+    content: "";
+    display: block;
+    height: 40px;  /* Adjust this to the height of your navbar */
+    margin: -60px 0 0;  /* Negative margin to pull the section up */
+    visibility: hidden;
+    pointer-events: none;
+}
+.content-section {
+    margin-top: 40px;
+    padding: 180px;
+    height: 50px;
+}
+
+/* Home section general setup */
+#Home {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    position: relative; /* To allow absolute positioning inside */
+    height: 100vh; /* Adjust based on your design */
+}
+
+/* Animation for your name */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.name-animation {
+    font-size: 2em;
+    position: absolute;
+    top: 10%; /* Adjust this to position your name */
+    left: 50%;
+    transform: translateX(-50%);
+    animation: fadeIn 2s ease-in-out;
+}
+
+
+
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.info-box-container {
+    opacity: 0;
+    transform: translateX(100%);
+    animation: slideInRight 1s forwards, fadeIn 1s forwards;
+    animation-delay: calc(1.2s + (0.2s * var(--box-number)));
+}
+
+.info-box {
+    width: 300px;
+    height: 400px;
+    background: #585555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(1);
+    opacity: 1;  /* Make it visible */
+    transition: transform 0.3s ease-in-out;  /* Transition for hover effect */
+}
+
+.info-box:hover {
+    background-color: #ff5555;
+    transform: scale(1.1);
+}
+
+
+#About p {
+    color: #ffffff;
+}
+
+#About img {
+    border-radius: 5%;
+    width: 15px; /* Re-check this value, it seems quite small */
+}
+
+/* Pagination Dots: Positioning and appearance of the navigation dots under the carousel */
+.pagination-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 10px;  /* Adjust as per your needs */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 101;  /* So that it's above the carousel content */
+}
+
+/* Individual Dot in the Pagination: Design for the clickable dots */
+.dot {
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    margin: 0 5px;
+    transition: background 0.3s;
+}
+
+.dot.active {
+    background: #ffffff;
+}

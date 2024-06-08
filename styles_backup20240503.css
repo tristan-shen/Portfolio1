@@ -1,0 +1,460 @@
+/* --- GENERAL SETTINGS --- */
+body {
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #ffffff;
+    background-color: #2e2d2d;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;  /* This ensures content doesn't overflow horizontally */
+}
+
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Global Styling for Smooth Scrolling */
+.content-section:before {
+    content: "";
+    display: block;
+    height: 40px;
+    margin: -40px 0 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+.content-section {
+    /*overflow: hidden;*/
+    margin-top: 0px;
+    padding: 10px;
+}
+
+/* --- NAVBAR STYLING --- */
+.navbar {
+    height: 30px; /* Adjust this value as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 200;
+}
+
+/*navbar text*/
+.navbar a {
+    display: inline-block;
+    float: none;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px; /* Adjust this value to your desired text size */
+}
+
+.navbar a:hover {
+    background-color: #ad0000;
+}
+
+/* -------------------------------------------- HOME SECTION ------------------------------------------------- */
+
+#Home {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;  /* This centers horizontally */
+    /*justify-content: space-around;*/
+    align-items: center;
+    position: relative;
+    height: 80vh;
+    background-color: #ffffff;
+    /*justify-content: space-between; /* This will adjust space between flex items */
+}
+
+.name-animation {
+    font-size: 2em;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: fadeIn 2s ease-in-out;
+    color: #000000;
+}
+.welcome-notes {
+    font-size: 1.2em;
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    transform: translateX(-50%);
+    animation: fadeIn 2s ease-in-out forwards;
+    color: #000;  /* Adjust color to fit your design */
+    text-align: center;
+    animation-delay: 0.5s;
+    opacity: 0;
+    margin-bottom: 20px;  /* Space between the additional text and the info boxes */
+}
+
+.info-box-container {
+    opacity: 0;
+    transform: translateX(100%);
+    animation: slideInRight 1s forwards, fadeIn 1s forwards;
+    animation-delay: calc(1.5s + (0.2s * var(--box-number)));
+    margin-top: 180px;  /* Adjust this value to your preference */
+}
+
+.info-box {
+    width: 400px;
+    height: 500px;
+    background: #585555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(1);
+    opacity: 1;
+    transition: transform 0.3s ease-in-out;
+    margin: 0 20px; /* Space between boxes. Adjust as needed. */
+}
+
+.info-box:hover {
+    background-color: #ff5555;
+    transform: scale(1.1);
+}
+
+.info-box img, .info-box video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  
+    /* This ensures the image or 
+    video covers the entire content
+     area without being stretched or squished */
+}
+
+/* Triple Down Arrow Styles - Start */
+.scroll-downs {
+    position: absolute;
+    bottom: 20px;
+    left: 90%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+  
+  .mousey {
+    display: block;
+    margin: 0 auto;
+    width: 25px;
+    height: 45px;
+    border: 2px solid black;
+    border-radius: 14px;
+    position: relative;
+    box-sizing: border-box;
+  }
+  
+  .scroller {
+    width: 3px;
+    height: 10px;
+    border-radius: 25%;
+    background-color: rgb(0, 0, 0);
+    animation: scroll 1s infinite;
+    position: absolute;
+    top: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scroll 2s infinite; /* Change the duration as needed */
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .fade-in {
+    animation: fadeIn 3s ease-out;
+  }
+  @keyframes scroll {
+    0% { opacity: 0; }
+    30% { opacity: 1; }
+    60% { opacity: 1; }
+    100% { opacity: 0; top: 25px; }
+  }
+  /* Triple Down Arrow Styles - End */
+/* ----------------------------------------- ABOUT SECTION ------------------------------------------------- */
+#About {
+    height: 80vh;
+    background-color: #000000;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;  /* This centers horizontally */
+    /*justify-content: space-around;*/
+    align-items: center;
+}
+
+/* Initial state of your charts (not animated) */
+.chart {
+    /* your initial CSS properties */
+    opacity: 0;
+    transform: scaleY(0); /* for bar chart animations */
+  }
+  
+  /* Animated state of your charts */
+  .chart.animate {
+    animation: growChart 1.5s forwards;
+  }
+  
+  @keyframes growChart {
+    to {
+      opacity: 1;
+      transform: scaleY(1);
+    }
+  }
+  #chart1, #chart2, #chart3 {
+    /* You can consolidate the repeated styles here, and then add any unique styles after */
+    margin: 10px;
+    position: absolute;  
+    transform: translateY(-50%);
+    justify-content: center;
+}
+  #chart1 {
+    top: 20%;
+    border: 1px solid #00000000;
+    background-color: #a82c2c00;
+    left: 18%;             /* Positions it at the start (left) horizontally */
+}
+   #chart2 {
+    top: 50%;
+    border: 0px solid #000000;
+    background-color: #a82c2c00;
+    left: 65%;             /* Positions it at the start (left) horizontally */
+}
+   #chart3 {
+    top: 80%;
+    border: 0px solid #000000;
+    background-color: #a82c2c00;
+    left: 18%;             /* Positions it at the start (left) horizontally */
+}
+.chart-text {
+    font-family: 'Arial', sans-serif; /* This sets the font to Arial. You can replace 'Arial' with another font name if you have one in mind. */
+    position: absolute;
+    color: #ffffff; /* You can change #000 to any color you want. For example, #ff5733 for a reddish color. */
+    /* This will adjust the position of the text so it appears to the right of the canvas */
+    transform: translateY(-50%);
+    max-width: 800px;
+    overflow: hidden; /* Hide the overflow for typing animation */
+    white-space: wrap; /* Allow the text to break into lines */
+    /*wrap*/ /* Prevent the text from wrapping to the next line */
+    background-color: #00000000;
+}
+
+#text1 {
+    top: 15%;
+    left: 35%;
+}
+
+#text2 {
+    top: 45%;
+    left: 20%;
+}
+
+#text3 {
+    top: 75%;
+    left: 35%;
+}
+/* --- -----------------------------------------Resume SECTION--------------------------------------------- --- */
+#Resume {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content horizontally */
+    color: #ffffff;
+    height: 80vh;
+    overflow: hidden;
+    min-height: 500px;
+    width: 100%;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Keep video behind everything */
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0; /* Above the video but below the text */
+}
+
+#Resume h2, #Resume p, #Resume .resume-content {
+    z-index: 1; /* Ensures text and content are above the overlay and video */
+}
+
+#Resume > h2 {
+    margin-top: 20px; /* Adjust top margin to push down slightly from the very top if needed */
+    color: #ffffff;
+}
+
+.resume-content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* --- -----------------------------------------WORK SECTION--------------------------------------------- --- */
+/* --- CAROUSEL STYLING --- */
+#Work{
+    position: relative;
+    display: flex;
+    justify-content: center; /* This centers horizontally */
+    align-items: center;     /* This centers vertically */
+    background-color: #ebebeb;
+    height: 100vh; /* This can be adjusted based on how tall you want the section to be */
+}
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-viewport {
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.portfolio-items {
+    display: flex;
+    transition: transform 0.5s;
+}
+
+.portfolio-item {
+    flex: 0 0 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    background-color: #ebebeb;
+    color: #ebebeb;
+}
+
+.portfolio-item.active {
+    opacity: 1;
+}
+
+/*.portfolio-item:not(.active) {
+    opacity: 0.6;
+    transform: scale(0.9);
+}*/
+
+.pdf-link {
+    display: block;
+    margin-top: 10px;
+    text-align: right;
+    background-color: #000000;
+    padding: 5px 10px;
+    border-radius: 3px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.pdf-link:hover {
+    background-color: #555;
+}
+
+.carousel-btn, #prevBtn, #nextBtn {
+    height: 50vh;
+    background-color: #ebebeb;
+    border: 0px solid #fd0000;
+    color: #000000;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 100;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-btn:hover, #prevBtn:hover, #nextBtn:hover {
+    height: 50vh;
+    border: 0px solid #fd0000;
+    background-color: rgba(119, 117, 117, 0.445);
+}
+
+#prevBtn {
+    left: 300px;
+}
+
+#nextBtn {
+    right: 300px;
+}
+
+.pagination-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 180px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 101;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    margin: 0 5px;
+    transition: background 0.3s;
+}
+
+.dot.active {
+    background: #000000;
+}
+
+/* ---------------------------------------------- CONTACT SECTION ----------------------------------------- */
+#Contact {
+    margin-top: 300px; /* Adjust value as needed */
+}
+/* --- ANIMATIONS --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

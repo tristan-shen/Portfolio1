@@ -1,0 +1,133 @@
+/* mortgage.css */
+.mortgage-dashboard-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .mortgage-section-wrapper {
+    display: flex;
+    gap: 20px;
+    align-items: stretch; /* Ensure all child elements have the same height */
+  }
+  
+  .mortgage-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-width: 300px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mortgage-input-group {
+    margin-bottom: 10px;
+  }
+  
+  .mortgage-input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-style: italic;
+    font: 0.8em sans-serif;
+  }
+  
+  .mortgage-input-group input,
+  .mortgage-input-group select {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-style: italic;
+  }
+  
+  .mortgage-summary-box,
+  .mortgage-chart-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    padding: 50px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mortgage-summary-box {
+    height: 100%; /* Ensure it takes the full height available */
+  }
+  
+  .mortgage-chart-box {
+    height: 100%; /* Ensure it takes the full height available */
+  }
+  
+  .mortgage-summary-box h3 {
+    margin: 0;
+    font-size: 1.1em;
+    font-style: italic;
+  }
+  
+  .mortgage-summary-box p {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  #paymentPieChart,
+  #investmentLineChart {
+    flex: 1; /* Make the charts take available space */
+    max-height: 100%; /* Ensure they don't exceed the container height */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+  }
+  
+  .mortgage-bottom-section {
+    display: flex;
+    gap: 20px;
+    align-items: stretch; /* Ensure all child elements have the same height */
+  }
+  
+  .mortgage-line-chart-box,
+  .investment-summary-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .investment-summary-box h3 {
+    margin: 0;
+    font-size: 1em;
+    font-style: italic;
+  }
+  
+  .investment-summary-box p {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  .invest-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .invest-button:hover {
+    background-color: #0056b3;
+  }
+  

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="chartanimation.js"></script>
+    <script src="hovervideo.js"></script>
+    <link rel="stylesheet" href="CSS\styles.css">
+    <link rel="stylesheet" href="CSS\About_Section.css">
+    <link rel="stylesheet" href="CSS\Home_Section.css">
+    <link rel="stylesheet" href="CSS\Work_Section.css">
+    <link rel="stylesheet" href="CSS\Resume_Section.css">
+    <link rel="stylesheet" href="CSS\Contact_Section.css">
+    <link rel="stylesheet" href="CSS\timevalue.css">
+    <link rel="stylesheet" href="CSS\mortgage.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="#Home">Home</a>
+        <a href="#About">About</a>
+        <a href="#Resume">Resume</a>
+        <a href="#Work">My Work</a>
+        <a href="#Contact">Contact</a>
+    </nav>
+    
+    <!-- Home Section -->
+    <section class="content-section parallax" id="Home" style="background-image: url('/image/112.jpg');">
+        <div class="name-animation">Zeqiang Shen(Tristan)</div>
+        <div class="welcome-notes">Welcome to my portfolio, let me tell you a story about me....</div>
+        <div class="info-box-container" style="--box-number:1">
+            <div class="info-box" data-content="content">
+                <img src="image\ZeQiangShen--Resume (1).jpg" alt="image\112.jpg">
+                <!--Box 1-->
+            </div>
+        </div>
+        <div class="info-box-container" style="--box-number:2">
+            <div class="info-box" data-content="content">
+                <video class="hover-video" width="300" height="200" loop muted>
+                    <source src="Screen 1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <!--Box 2-->
+            </div>
+        </div>
+        <div class="info-box-container" style="--box-number:3">
+            <div class="info-box" data-content="content">Box 3</div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="content-section" id="About">
+        <!--<h1>About Me</h1>
+        <p>This is the about section of my portfolio website.</p>-->
+        <div class="dashboard-wrapper">
+            <div class="icon-bar">
+                <div class="icon" data-dashboard="time-value-money">💰</div>
+                <div class="icon" data-dashboard="mortgage">🏠</div>
+                <div class="icon" data-dashboard="dashboard-3">📊</div>
+            </div>
+
+            <!-- Time Value of Money Dashboard -->
+            <div class="dashboard" id="time-value-money-dashboard">
+                <h2>Time Value of Money</h2>
+                <div class="input-container">
+                    <div class="input-box">
+                        <label for="moneyInput">Enter your money:</label>
+                        <input type="number" id="moneyInput" value="100000" placeholder="Enter your money" />
+                    </div>
+                    <div class="input-box">
+                        <label for="interestRate">Enter interest rate (%):</label>
+                        <input type="number" id="interestRate" value="5" placeholder="Enter interest rate" />
+                    </div>
+                </div>
+                <div class="summary-container">
+                    <div class="summary-box">
+                        <h3>Total Interest Earned (5 years):</h3>
+                        <p id="totalInterest5"></p>
+                        <h3>Average Annual Interest (5 years):</h3>
+                        <p id="averageInterest5"></p>
+                    </div>
+                    <div class="summary-box">
+                        <h3>Total Interest Earned (10 years):</h3>
+                        <p id="totalInterest10"></p>
+                        <h3>Average Annual Interest (10 years):</h3>
+                        <p id="averageInterest10"></p>
+                    </div>
+                    <div class="summary-box">
+                        <h3>Total Interest Earned (15 years):</h3>
+                        <p id="totalInterest15"></p>
+                        <h3>Average Annual Interest (15 years):</h3>
+                        <p id="averageInterest15"></p>
+                    </div>
+                </div>
+                <div class="interest-chart-container">
+                    <div class="interest-boxes">
+                        <div class="interest-box">
+                            <h3>Interest Earned At The End Of Year 5</h3>
+                            <p id="interest5" class="amount"></p>
+                            <p id="percentage5" class="percentage"></p>
+                        </div>
+                        <div class="interest-box">
+                            <h3>Interest Earned At The End Of Year 10</h3>
+                            <p id="interest10" class="amount"></p>
+                            <p id="percentage10" class="percentage"></p>
+                        </div>
+                        <div class="interest-box">
+                            <h3>Interest Earned At The End Of Year 15</h3>
+                            <p id="interest15" class="amount"></p>
+                            <p id="percentage15" class="percentage"></p>
+                        </div>
+                    </div>
+                    <div class="chart-box line-chart">
+                        <canvas id="timeValueChart" width="600" height="400"></canvas>
+                    </div>
+                    <div class="chart-box bar-chart">
+                        <canvas id="interestBarChart" width="600" height="400"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mortgage Dashboard -->
+            <div class="dashboard" id="mortgage-dashboard" style="display: none;">
+                <h2>Mortgage Calculator</h2>
+                <div class="mortgage-dashboard-container">
+                    <div class="mortgage-section-wrapper">
+                        <div class="mortgage-input-wrapper">
+                            <div class="mortgage-input-group">
+                                <label for="mortgageAmount">Mortgage Amount:</label>
+                                <input type="number" id="mortgageAmount" value="500000" placeholder="Enter mortgage amount" />
+                            </div>
+                            <div class="mortgage-input-group">
+                                <label for="prepaymentAmount">Prepayment Amount:</label>
+                                <input type="number" id="prepaymentAmount" value="100000" placeholder="Enter prepayment amount" />
+                            </div>
+                            <div class="mortgage-input-group">
+                                <label for="annualInterestRate">Annual Interest Rate (%):</label>
+                                <input type="number" id="annualInterestRate" value="5" placeholder="Enter annual interest rate" />
+                            </div>
+                            <div class="mortgage-input-group">
+                                <label for="amortizationPeriod">Amortization Period:</label>
+                                <select id="amortizationPeriod">
+                                    <option value="25" selected>25 years</option>
+                                    <option value="1">1 year</option>
+                                    <option value="2">2 years</option>
+                                    <option value="3">3 years</option>
+                                    <option value="4">4 years</option>
+                                    <option value="5">5 years</option>
+                                    <option value="6">6 years</option>
+                                    <option value="7">7 years</option>
+                                    <option value="8">8 years</option>
+                                    <option value="9">9 years</option>
+                                    <option value="10">10 years</option>
+                                    <option value="11">11 years</option>
+                                    <option value="12">12 years</option>
+                                    <option value="13">13 years</option>
+                                    <option value="14">14 years</option>
+                                    <option value="15">15 years</option>
+                                    <option value="16">16 years</option>
+                                    <option value="17">17 years</option>
+                                    <option value="18">18 years</option>
+                                    <option value="19">19 years</option>
+                                    <option value="20">20 years</option>
+                                    <option value="21">21 years</option>
+                                    <option value="22">22 years</option>
+                                    <option value="23">23 years</option>
+                                    <option value="24">24 years</option>
+                                    <option value="26">26 years</option>
+                                    <option value="27">27 years</option>
+                                    <option value="28">28 years</option>
+                                    <option value="29">29 years</option>
+                                    <option value="30">30 years</option>
+                                </select>
+                            </div>
+                            <div class="mortgage-input-group">
+                                <label for="paymentFrequency">Payment Frequency:</label>
+                                <select id="paymentFrequency">
+                                    <option value="12" selected>Monthly (12x per year)</option>
+                                    <option value="52">Weekly (52x per year)</option>
+                                    <option value="26">Bi-weekly (26x per year)</option>
+                                    <option value="24">Semi-monthly (24x per year)</option>
+                                </select>
+                            </div>
+                            <div class="mortgage-input-group">
+                                <label for="termYears">Term (years):</label>
+                                <select id="termYears">
+                                    <option value="5" selected>5 years</option>
+                                    <option value="1">1 year</option>
+                                    <option value="2">2 years</option>
+                                    <option value="3">3 years</option>
+                                    <option value="4">4 years</option>
+                                    <option value="6">6 years</option>
+                                    <option value="7">7 years</option>
+                                    <option value="8">8 years</option>
+                                    <option value="9">9 years</option>
+                                    <option value="10">10 years</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mortgage-summary-box">
+                            <h3>Total Payment Amount:</h3>
+                            <p id="totalPaymentAmount"></p>
+                            <h3>Total Interest Paid:</h3>
+                            <p id="totalInterestPaid"></p>
+                            <h3>Total Number of Payments:</h3>
+                            <p id="totalNumberOfPayments"></p>
+                            <h3>Monthly Payment:</h3>
+                            <p id="monthlyPayment"></p>
+                        </div>
+                        <div class="mortgage-chart-box">
+                            <canvas id="paymentPieChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="mortgage-bottom-section">
+                        <div class="mortgage-line-chart-box">
+                            <canvas id="investmentLineChart"></canvas>
+                        </div>
+                        <div class="investment-summary-box">
+                            <h3>If you saved the money instead of borrowing, you will have earned:</h3>
+                            <p id="totalInvestmentInterest"></p>
+                            <p id="averageInvestmentInterestPerYear"></p>
+                            <p id="timeToSurpassMortgage"></p>
+                            <a href="ZeQiangShen--Resume (1).pdf" class="invest-button">Start Investing</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard 3 Under Construction -->
+            <div class="dashboard" id="dashboard-3-dashboard" style="display: none;">
+                <h2>Under Construction</h2>
+                <p>This section is currently under construction.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section class="content-section" id="Resume">
+        <video class="background-video" autoplay loop muted>
+            <source src="Screen 1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
+        <div class="wrapper">
+            <div class="lid one"></div>
+            <div class="lid two"></div>
+            <div class="envelope"></div>
+            <div class="letter">
+                <p> </p>
+            </div>
+            <div class="stamp"></div>
+            <div class="resume-content" id="resumeContent">
+                <img src="image/ZeQiangShen--Resume (1).jpg" alt="Resume Image" class="resume-image">
+                <a href="ZeQiangShen--Resume (1).pdf" class="download-button" download>Download</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section class="content-section" id="Work">
+        <div class="work-grid">
+            <div class="work-item" onclick="window.location.href='ChiPatisserie_brand profile.pdf'">
+                <img src="image/123.jpg" alt="Project Description">
+                <div class="overlay">
+                    <p class="project-title">Project Title</p>
+                    <p class="project-description">Short description of the project.</p>
+                </div>
+            </div>
+            <div class="work-item" onclick="window.location.href='path/to/work2.html'">
+                <img src="image/123.jpg" alt="Project Description">
+                <div class="overlay">
+                    <p class="project-title">Project Title</p>
+                    <p class="project-description">Short description of the project.</p>
+                </div>
+            </div>
+            <div class="work-item" onclick="window.location.href='path/to/work2.html'">
+                <img src="image/123.jpg" alt="Project Description">
+                <div class="overlay">
+                    <p class="project-title">Project Title</p>
+                    <p class="project-description">Short description of the project.</p>
+                </div>
+            </div>
+            <div class="work-item" onclick="window.location.href='path/to/work2.html'">
+                <img src="image/123.jpg" alt="Project Description">
+                <div class="overlay">
+                    <p class="project-title">Project Title</p>
+                    <p class="project-description">Short description of the project.</p>
+                </div>
+            </div>
+            <div class="work-item" onclick="window.location.href='path/to/work2.html'">
+                <img src="image/123.jpg" alt="Project Description">
+                <div class="overlay">
+                    <p class="project-title">Project Title</p>
+                    <p class="project-description">Short description of the project.</p>
+                </div>
+            </div>
+            <!-- Add more work items as needed -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="content-section" id="Contact">
+        <h2>Contact</h2>
+        <!-- Content for Contact Section -->
+    </section>
+
+    <script src="timevalue.js"></script>
+    <script src="mortgage.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Function to switch dashboards
+            function switchDashboard(dashboardId) {
+                const dashboards = document.querySelectorAll('.dashboard');
+                dashboards.forEach(dashboard => {
+                    if (dashboard.id === dashboardId) {
+                        dashboard.style.display = 'block';
+                    } else {
+                        dashboard.style.display = 'none';
+                    }
+                });
+            }
+
+            // Add event listeners to icons
+            const icons = document.querySelectorAll('.icon');
+            icons.forEach(icon => {
+                icon.addEventListener('click', function () {
+                    const dashboardId = icon.getAttribute('data-dashboard') + '-dashboard';
+                    switchDashboard(dashboardId);
+                });
+            });
+
+            // Initial calculation with default values for both dashboards
+            calculateTimeValue();
+            calculateMortgage();
+
+            // Show the first dashboard by default
+            switchDashboard('time-value-money-dashboard');
+        });
+    </script>
+    <script src="Resume.js"></script>
+</body>
+</html>

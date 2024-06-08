@@ -1,0 +1,78 @@
+/* --- GENERAL SETTINGS --- */
+body {
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #ffffff;
+    background-color: #2e2d2d;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;  /* This ensures content doesn't overflow horizontally */
+}
+
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+/* Parallax Effect */
+.parallax {
+    /* Full height */
+    height: 100%;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* Global Styling for Smooth Scrolling */
+.content-section:before {
+    content: "";
+    display: block;
+    height: 40px;
+    margin: -40px 0 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+.content-section {
+    /*overflow: hidden;*/
+    margin-top: 0px;
+    padding: 10px;
+}
+
+/* --- NAVBAR STYLING --- */
+.navbar {
+    height: 30px; /* Adjust this value as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 200;
+}
+
+/*navbar text*/
+.navbar a {
+    display: inline-block;
+    float: none;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px; /* Adjust this value to your desired text size */
+}
+
+.navbar a:hover {
+    background-color: #ad0000;
+}

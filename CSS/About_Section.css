@@ -1,0 +1,7 @@
+#About{
+  color: #333; /* Universal text color */
+    font-family: Arial, sans-serif; /* Optional: Set a universal font */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+}

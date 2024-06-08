@@ -1,0 +1,114 @@
+/* --- CAROUSEL STYLING --- */
+#Work{
+    position: relative;
+    display: flex;
+    justify-content: center; /* This centers horizontally */
+    align-items: center;     /* This centers vertically */
+    background-color: #ebebeb;
+    height: 100vh; /* This can be adjusted based on how tall you want the section to be */
+}
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-viewport {
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.portfolio-items {
+    display: flex;
+    transition: transform 0.5s;
+}
+
+.portfolio-item {
+    flex: 0 0 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    background-color: #ebebeb;
+    color: #ebebeb;
+}
+
+.portfolio-item.active {
+    opacity: 1;
+}
+
+/*.portfolio-item:not(.active) {
+    opacity: 0.6;
+    transform: scale(0.9);
+}*/
+
+.pdf-link {
+    display: block;
+    margin-top: 10px;
+    text-align: right;
+    background-color: #000000;
+    padding: 5px 10px;
+    border-radius: 3px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.pdf-link:hover {
+    background-color: #555;
+}
+
+.carousel-btn, #prevBtn, #nextBtn {
+    height: 50vh;
+    background-color: #ebebeb;
+    border: 0px solid #fd0000;
+    color: #000000;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 100;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-btn:hover, #prevBtn:hover, #nextBtn:hover {
+    height: 50vh;
+    border: 0px solid #fd0000;
+    background-color: rgba(119, 117, 117, 0.445);
+}
+
+#prevBtn {
+    left: 300px;
+}
+
+#nextBtn {
+    right: 300px;
+}
+
+.pagination-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 180px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 101;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    margin: 0 5px;
+    transition: background 0.3s;
+}
+
+.dot.active {
+    background: #000000;
+}
