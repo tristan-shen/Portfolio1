@@ -1,7 +1,49 @@
-#About{
-  color: #333; /* Universal text color */
-    font-family: Arial, sans-serif; /* Optional: Set a universal font */
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+.About-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  height: 100vh; /* Full viewport height */
+  color: white; /* Change text color to white */
+  background-color: rgb(32, 32, 32);
+}
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Allows items to wrap if the screen is too small */
+}
+
+.about-photo {
+  margin-top: -100px; /* Adjust this value as needed */
+}
+.about-photo img {
+  width: 160px;
+  height: 160px;
+  border-radius: 40%;
+  object-fit: cover;
+  object-position: center; /* Default position (center of the image) */
+}
+
+.about-text {
+  flex: 1;
+  margin-top: 50px;
+  max-width: 700px; /* Set the maximum width as needed */
+  align-items: center;
+  text-align: center;
+}
+
+.about-icons {
+  margin-top: 10px;
+}
+
+.about-icons a {
+  margin-right: 10px;
+}
+
+.about-icons i {
+  font-size: 50px; /* Increase the size as needed */
 }

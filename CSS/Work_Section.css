@@ -32,6 +32,7 @@
     height: 100%;
     object-fit: cover; /* Ensures the media fits the box */
     border-radius: 15px; /* Rounded corners */
+    object-position: center; /* Default position (center of the image) */
 }
 /* Overlay for hover effect */
 .overlay {
@@ -46,6 +47,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     overflow: hidden;
     transition: height 0.3s ease-in-out;
     border-radius: 0 0 15px 15px; /* Rounded bottom corners */
@@ -68,6 +70,12 @@
     /*z-index: 10;  /*Makes sure it pops out over other items */
     height: 50%; /* Adjust height as needed */
 }
-.project-title, .project-description {
+.project-description {
     margin: 5px;
+    font-style: italic; /* Make the text italic */
+}
+
+.project-title{
+    margin: 5px;
+    font-weight: bold; /* Make the text bold */
 }
