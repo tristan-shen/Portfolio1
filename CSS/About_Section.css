@@ -15,6 +15,7 @@
   align-items: center;
   gap: 20px;
   flex-wrap: wrap; /* Allows items to wrap if the screen is too small */
+  min-height: 300px; /* Set a minimum height to ensure stability */
 }
 
 .about-photo {
@@ -26,24 +27,45 @@
   border-radius: 40%;
   object-fit: cover;
   object-position: center; /* Default position (center of the image) */
+  margin-top: 0px;
 }
 
 .about-text {
+  display: flex;
+  flex-direction: column;
   flex: 1;
   margin-top: 50px;
+  margin-right: 100px;
   max-width: 700px; /* Set the maximum width as needed */
   align-items: center;
   text-align: center;
+  justify-content: center;
+  font-family: "Times New Roman", Times, serif;
+  letter-spacing: 2px; /* Adjust the letter spacing as needed */
+  line-height: 1.5; /* Adjust the line height as needed */
 }
 
 .about-icons {
-  margin-top: 10px;
+  margin-top: 50px;
+  display: flex; /* Add flexbox layout */
+  gap: 50px; /* Add gap between icons */
 }
-
+.about-icons :hover {
+  color: blue;
+}
 .about-icons a {
   margin-right: 10px;
+  color: white; /* Set the icon color */
+  text-decoration: none; /* Remove underline from links */
+  gap: 1px;
 }
 
 .about-icons i {
   font-size: 50px; /* Increase the size as needed */
+}
+
+.text-with-line {
+  display: inline-block; /* Ensures the border only takes the width of the text */
+  border-bottom: 2px solid white; /* Adjust color and thickness as needed */
+  padding-bottom: 50px; /* Adds some space between the text and the line */
 }

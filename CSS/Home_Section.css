@@ -2,7 +2,7 @@
 
 #Home {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;  /* This centers horizontally */
   /*justify-content: space-around;*/
   align-items: center;
@@ -20,6 +20,7 @@
   transform: translateX(-50%);
   animation: fadeIn 2s ease-in-out;
   color: #000000;
+  white-space: nowrap;
 }
 
 .welcome-notes {
@@ -36,6 +37,7 @@
   margin-bottom: 20px;  /* Space between the additional text and the info boxes */
   align-items: center;
   justify-content: center;
+  white-space: nowrap;
 }
 
 .info-box-container {
