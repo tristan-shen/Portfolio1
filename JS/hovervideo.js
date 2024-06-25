@@ -26,3 +26,13 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }, 1000); // 2000ms = 2s delay
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const workItems = document.querySelectorAll('.work-item');
+    workItems.forEach(item => {
+        item.addEventListener('click', function () {
+            const url = this.getAttribute('data-url');
+            window.open(url, '_blank');
+        });
+    });
+});
