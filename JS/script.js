@@ -284,3 +284,4 @@ document.addEventListener("DOMContentLoaded", function() {
       scrollDowns.className = 'scroll-downs fade-in';
     }, 4000);
   });
+

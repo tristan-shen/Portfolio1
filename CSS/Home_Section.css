@@ -55,11 +55,14 @@
 .info-box-container {
   opacity: 0;
   transform: translateX(100%);
-  animation: slideInRight 1s forwards, fadeIn 1s forwards;
-  animation-delay: calc(1.5s + (0.2s * var(--box-number)));
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+  /*animation: slideInRight 1s forwards, fadeIn 1s forwards;*/
   margin-top: 190px;  /* Adjust this value to your preference */
 }
-
+.info-box-container.fly-in {
+  opacity: 1;
+  transform: translateX(0);
+}
 .info-box {
   width: 380px;
   height: 450px;

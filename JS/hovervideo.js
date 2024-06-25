@@ -18,3 +18,11 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(() => {
+        const infoBoxes = document.querySelectorAll('.info-box-container');
+        infoBoxes.forEach(box => {
+            box.classList.add('fly-in');
+        });
+    }, 1000); // 2000ms = 2s delay
+});
