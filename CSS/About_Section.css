@@ -21,13 +21,13 @@
 .about-photo {
   margin-top: -100px; /* Adjust this value as needed */
 }
+
 .about-photo img {
   width: 160px;
   height: 160px;
   border-radius: 40%;
   object-fit: cover;
   object-position: center; /* Default position (center of the image) */
-  margin-top: 0px;
 }
 
 .about-text {
@@ -45,23 +45,32 @@
   line-height: 1.5; /* Adjust the line height as needed */
 }
 
+.about-icons img {
+  width: 70px; /* Adjust the size as needed */
+  height: 70px;
+  background-color: transparent; /* Ensure no background color */
+  border: none; /* Remove any border if present */
+}
+
 .about-icons {
+  justify-content: center; /* Center the icons */
   margin-top: 50px;
   display: flex; /* Add flexbox layout */
   gap: 50px; /* Add gap between icons */
 }
-.about-icons :hover {
-  color: blue;
-}
+
 .about-icons a {
-  margin-right: 10px;
-  color: white; /* Set the icon color */
+  width: 70px; /* Adjust the size as needed */
+  height: 70px;
+  color: rgb(33, 70, 235); /* Set the icon color */
   text-decoration: none; /* Remove underline from links */
-  gap: 1px;
+  border-radius: 50%;
 }
 
-.about-icons i {
-  font-size: 50px; /* Increase the size as needed */
+.about-icons a:hover {
+  width: 70px; /* Adjust the size as needed */
+  height: 70px;
+  background-color: blue;
 }
 
 .text-with-line {
