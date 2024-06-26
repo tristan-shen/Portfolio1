@@ -10,7 +10,7 @@
   height: 80vh;
   /*justify-content: space-between; /* This will adjust space between flex items */
   /*background-color: #ffffff;*/
-  background-image: url('/image/25.jpeg');
+  background-image: url('/image/25.jpg');
   background-size: cover; /* Or use 'contain', 'auto', or any specific size like '100% 100%' */
   background-position: top; /* Center the background image */
   background-repeat: no-repeat; /* Prevent the background from repeating */
