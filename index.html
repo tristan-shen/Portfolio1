@@ -11,7 +11,18 @@
     <link rel="stylesheet" href="CSS\Work_Section.css">
     <link rel="stylesheet" href="CSS\Resume_Section.css">
     <link rel="stylesheet" href="CSS\Contact_Section.css">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:;">
+    <meta http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self';
+        script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net;
+        style-src 'self' 'unsafe-inline';
+        connect-src 'self' https://api.emailjs.com;
+        img-src 'self' data:;
+      ">
+
+
+
+
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -64,10 +75,11 @@
             </div>
             <div class="about-text">
                 <p class="text-with-line">
-                    If you pref1111er not to use easdfasdfxplicit pagination with page and limit, we can implement infinite scrolling by simply fetching additional 
-                    profiles without these parameters. Instead, we'll keep fetching and appending new profiles from the backend as needed. Backend: 
-                    Returning All Profiles (For Demonstration)
-                    Since your current backend returns all profiles without pagination, we'll adjust the frontend to fetch more profiles as the user scrolls.
+                    I’m an analyst and problem-solver with over four years of experience optimizing operations and guiding strategic decisions. 
+                    Running my own business not only taught me how to communicate effectively with different stakeholders, but also how to maximize mutual benefits.
+                    I’m also an active investor, which keeps me analyzing financial statements, appreciating diverse business models, and staying up to date with market trends.
+                    Above all, I love taking complex task and solve it with everything i got. 
+                    I love collaborating with a team to drive positive outcomes.
                 </p>
                 <div class="about-icons">
                     <a href="https://github.com/tristan-shen" target="_blank">
@@ -150,11 +162,32 @@
     </section>
 
     <!-- Contact Section -->
+    <!-- Contact Section -->
     <section class="content-section" id="Contact">
         <h2>Contact</h2>
-        <!-- Content for Contact Section -->
+        <p class="contact-information">Email: shen.tristan@gmail.com</p> 
+        <p class="contact-information">Phone: 647-473-0716</p> 
+        <a href="https://www.linkedin.com/in/zeqiang-shen-991740251" class="contact-link">LinkedIn</a>
+
+        <!-- CHANGED/ADDED: Added an ID so we can select this form in JavaScript -->
+        <form class="contact-form" id="contactForm" autocomplete="on">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="from_name" autocomplete="name">
+        
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="from_email" autocomplete="email">
+        
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" autocomplete="off"></textarea>
+        
+            <button type="submit">Send</button>
+        </form>
+        
     </section>
 
+    <script src="JS/contact.js"></script>
+    <!-- Your other scripts go below -->
     <script src="JS/Resume.js"></script>
+
 </body>
 </html>
